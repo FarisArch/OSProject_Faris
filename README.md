@@ -55,9 +55,9 @@ Team Mates:
 
 ***Questions:***
 
-1. What is default OS used to run the virtual environment for codespaces. ***(1 mark)*** __Fill answer here__.
-2. What are the two options of ram, disk and vcpu configuration you can have in running codespaces . ***(1 mark)*** __Fill answer here__.
-3. Why must we commit and sync our current work on source control? ***(1 mark)*** __Fill answer here__.
+1. What is default OS used to run the virtual environment for codespaces. ***(1 mark)*** __Ubuntu__.
+2. What are the two options of ram, disk and vcpu configuration you can have in running codespaces . ***(1 mark)*** __2 cores, 8GB RAM, 32GB Storage. 4 cores, 16GB RAM, 32GB__.
+3. Why must we commit and sync our current work on source control? ***(1 mark)*** __Commit makes sure our work is saved on the source control and syncing it allows other developers to see changes made. Source control also allows us to rollback changes__.
 
 ## Exploring the Terminal
 
@@ -74,23 +74,241 @@ codespace
 
 Look at the TERMINAL tab. Run the following commands and provide the output here. 
 
-1. Run the command **pwd** . ***(1 mark)*** __Fill answer here__.
-2. Run the command **cat /etc/passwd** . ***(1 mark)*** __Fill answer here__.
-3. Run the command **df** . ***(1 mark)*** __Fill answer here__.
-4. Run the command **du** . ***(1 mark)*** __Fill answer here__.
-5. Run the command **ls** . ***(1 mark)*** __Fill answer here__.
-6. Run the command **ls -asl** . ***(1 mark)*** __Fill answer here__.
-7. Run the command **free -h** . ***(1 mark)*** __Fill answer here__.
-8. Run the command **cat /proc/cpuinfo** . ***(1 mark)*** __Fill answer here__.
-9. Run the command **top** a type **q** to quit. ***(1 mark)*** __Fill answer here__.
-10. Run the command **uname -a**. ***(1 mark)*** __Fill answer here__.
-11. What is the available free memory in the system. ***(1 mark)*** __Fill answer here__.
-12. What is the available disk space mounted on /workspace. ***(1 mark)*** __Fill answer here__.
-13. Name the version and hardware architecture of the linux Virtual environment. ***(1 mark)*** __Fill answer here__.
-14. What is the difference between **ls** vs **ls -asl**. ***(1 mark)*** __Fill answer here__.
-15. What is the TLB size of the Virtual CPU. ***(1 mark)*** __Fill answer here__.
-16. What is the CPU speed of the Virtual CPU. ***(1 mark)*** __Fill answer here__.
-17. What is the top running process that consumes the most CPU cycles. ***(1 mark)*** __Fill answer here__.
+1. Run the command **pwd** . ***(1 mark)*** __/workspaces/OSProject_Faris__.
+2. Run the command **cat /etc/passwd** . ***(1 mark)***
+```sh
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+_apt:x:100:65534::/nonexistent:/usr/sbin/nologin
+systemd-timesync:x:101:101:systemd Time Synchronization,,,:/run/systemd:/usr/sbin/nologin
+systemd-network:x:102:103:systemd Network Management,,,:/run/systemd:/usr/sbin/nologin
+systemd-resolve:x:103:104:systemd Resolver,,,:/run/systemd:/usr/sbin/nologin
+messagebus:x:104:105::/nonexistent:/usr/sbin/nologin
+codespace:x:1000:1000::/home/codespace:/bin/bash
+sshd:x:105:65534::/run/sshd:/usr/sbin/nologin
+```
+3. Run the command **df** . ***(1 mark)***
+```sh
+Filesystem     1K-blocks     Used Available Use% Mounted on
+overlay         32847680 13628976  17524608  44% /
+tmpfs              65536        0     65536   0% /dev
+shm                65536        8     65528   1% /dev/shm
+/dev/root       30298176 23013240   7268552  76% /vscode
+/dev/sdb1       46127956      196  43752184   1% /tmp
+/dev/loop3      32847680 13628976  17524608  44% /workspaces
+```
+4. Run the command **du** . ***(1 mark)***
+```
+1972    ./images
+8       ./.git/objects/b9
+8       ./.git/objects/b6
+8       ./.git/objects/96
+8       ./.git/objects/c3
+8       ./.git/objects/3f
+12      ./.git/objects/b5
+12      ./.git/objects/44
+8       ./.git/objects/c6
+12      ./.git/objects/3d
+8       ./.git/objects/81
+12      ./.git/objects/73
+8       ./.git/objects/60
+8       ./.git/objects/a6
+8       ./.git/objects/e7
+8       ./.git/objects/fa
+12      ./.git/objects/d2
+8       ./.git/objects/4a
+8       ./.git/objects/f2
+8       ./.git/objects/7b
+8       ./.git/objects/a3
+8       ./.git/objects/fe
+8       ./.git/objects/04
+8       ./.git/objects/0d
+16      ./.git/objects/fb
+12      ./.git/objects/64
+8       ./.git/objects/cd
+8       ./.git/objects/fd
+8       ./.git/objects/4f
+8       ./.git/objects/e9
+8       ./.git/objects/20
+8       ./.git/objects/71
+1820    ./.git/objects/pack
+12      ./.git/objects/af
+8       ./.git/objects/52
+8       ./.git/objects/1b
+8       ./.git/objects/62
+4       ./.git/objects/info
+8       ./.git/objects/ab
+8       ./.git/objects/4b
+8       ./.git/objects/86
+8       ./.git/objects/24
+8       ./.git/objects/49
+12      ./.git/objects/72
+12      ./.git/objects/2e
+8       ./.git/objects/47
+8       ./.git/objects/b2
+8       ./.git/objects/83
+12      ./.git/objects/14
+8       ./.git/objects/91
+8       ./.git/objects/fc
+12      ./.git/objects/ff
+12      ./.git/objects/70
+8       ./.git/objects/74
+8       ./.git/objects/d8
+8       ./.git/objects/f6
+8       ./.git/objects/58
+8       ./.git/objects/93
+12      ./.git/objects/17
+2336    ./.git/objects
+4       ./.git/lfs/tmp
+8       ./.git/lfs
+4       ./.git/branches
+8       ./.git/info
+8       ./.git/logs/refs/heads
+8       ./.git/logs/refs/remotes/origin
+12      ./.git/logs/refs/remotes
+24      ./.git/logs/refs
+32      ./.git/logs
+64      ./.git/hooks
+8       ./.git/refs/heads
+8       ./.git/refs/remotes/origin
+12      ./.git/refs/remotes
+4       ./.git/refs/tags
+28      ./.git/refs
+2508    ./.git
+4500    .
+```
+5. Run the command **ls** . ***(1 mark)***
+```
+README.md images
+```
+6. Run the command **ls -asl** . ***(1 mark)***
+```sh
+total 32
+ 4 drwxrwxrwx+ 4 codespace root  4096 Jan 17 07:05 .
+ 4 drwxr-xrwx+ 5 codespace root  4096 Jan 17 07:05 ..
+ 4 drwxrwxrwx+ 9 codespace root  4096 Jan 17 07:06 .git
+16 -rw-rw-rw-  1 codespace root 15257 Jan 17 07:14 README.md
+ 4 drwxrwxrwx+ 2 codespace root  4096 Jan 17 07:05 images
+```
+7. Run the command **free -h** . ***(1 mark)***
+```sh
+              total        used        free      shared  buff/cache   available
+Mem:          7.7Gi       1.6Gi       164Mi       1.0Mi       6.0Gi       5.9Gi
+Swap:            0B          0B          0B
+```
+8. Run the command **cat /proc/cpuinfo** . ***(1 mark)*** 
+```sh
+processor       : 0
+vendor_id       : AuthenticAMD
+cpu family      : 25
+model           : 1
+model name      : AMD EPYC 7763 64-Core Processor
+stepping        : 1
+microcode       : 0xffffffff
+cpu MHz         : 2597.109
+cache size      : 512 KB
+physical id     : 0
+siblings        : 2
+core id         : 0
+cpu cores       : 1
+apicid          : 0
+initial apicid  : 0
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 13
+wp              : yes
+flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl tsc_reliable nonstop_tsc cpuid extd_apicid aperfmperf pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext invpcid_single vmmcall fsgsbase bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves clzero xsaveerptr rdpru arat npt nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold v_vmsave_vmload umip vaes vpclmulqdq rdpid fsrm
+bugs            : sysret_ss_attrs null_seg spectre_v1 spectre_v2 spec_store_bypass srso
+bogomips        : 4890.86
+TLB size        : 2560 4K pages
+clflush size    : 64
+cache_alignment : 64
+address sizes   : 48 bits physical, 48 bits virtual
+power management:
+
+processor       : 1
+vendor_id       : AuthenticAMD
+cpu family      : 25
+model           : 1
+model name      : AMD EPYC 7763 64-Core Processor
+stepping        : 1
+microcode       : 0xffffffff
+cpu MHz         : 2445.434
+cache size      : 512 KB
+physical id     : 0
+siblings        : 2
+core id         : 0
+cpu cores       : 1
+apicid          : 1
+initial apicid  : 1
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 13
+wp              : yes
+flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl tsc_reliable nonstop_tsc cpuid extd_apicid aperfmperf pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext invpcid_single vmmcall fsgsbase bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves clzero xsaveerptr rdpru arat npt nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold v_vmsave_vmload umip vaes vpclmulqdq rdpid fsrm
+bugs            : sysret_ss_attrs null_seg spectre_v1 spectre_v2 spec_store_bypass srso
+bogomips        : 4890.86
+TLB size        : 2560 4K pages
+clflush size    : 64
+cache_alignment : 64
+address sizes   : 48 bits physical, 48 bits virtual
+power management:
+```
+9. Run the command **top** a type **q** to quit. ***(1 mark)***
+```sh
+top - 07:16:17 up 27 min,  0 users,  load average: 0.21, 0.31, 0.39
+Tasks:  19 total,   2 running,  17 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  3.3 sy,  0.0 ni, 96.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7930.0 total,    188.6 free,   1595.0 used,   6146.4 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   6018.9 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                                                                                 
+      1 codespa+  20   0    1136    640    640 S   0.0   0.0   0:00.04 docker-init                                                                             
+      7 codespa+  20   0    7236   1792   1792 S   0.0   0.0   0:00.01 sleep                                                                                   
+     59 root      20   0   12192   3480   2560 S   0.0   0.0   0:00.00 sshd    
+```
+10. Run the command **uname -a**. ***(1 mark)***
+```
+Linux codespaces-2395a2 6.2.0-1018-azure #18~22.04.1-Ubuntu SMP Tue Nov 21 19:25:02 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+```
+11. What is the available free memory in the system. ***(1 mark)*** __145MB__.
+12. What is the available disk space mounted on /workspace. ***(1 mark)*** __17524376__.
+13. Name the version and hardware architecture of the linux Virtual environment. ***(1 mark)***
+```sh
+Linux codespaces-2395a2 6.2.0-1018-azure #18~22.04.1-Ubuntu
+```
+14. What is the difference between **ls** vs **ls -asl**. ***(1 mark)***
+```sh
+ls shows only visible files. `ls -asl` shows the files permissions, hidden files/folders, and other useful information such as owner and group of files and folders.
+```
+15. What is the TLB size of the Virtual CPU. ***(1 mark)
+```
+2560 4K pages
+```
+16. What is the CPU speed of the Virtual CPU. ***(1 mark)***
+```sh
+2597.109Mhz
+```
+17. What is the top running process that consumes the most CPU cycles. ***(1 mark)***
+```sh
+node
+```
 
 ## Running your own container instance.
 
@@ -150,8 +368,14 @@ f65be1987f84   debian    "bash"    19 minutes ago   Exited (137) 18 seconds ago 
 
 ***Questions:***
 
-1. Are files in the container persistent. Why not?. ***(1 mark)*** __Fill answer here__.
-2. Can we run two, or three instances of debian linux? . ***(1 mark)*** __Fill answer here__.
+1. Are files in the container persistent. Why not?. ***(1 mark)***
+```sh
+When the container is stopped and restarted, the file is persistent because it's in a container and has its own storage and everything in there happens in there. When delete the container, the file does not persist as we're deleting the container as a whole.
+```
+2. Can we run two, or three instances of debian linux? . ***(1 mark)***
+```sh
+Yes, they can run in their own container.
+```
 
 ## Running your own container with persistent storage
 
@@ -170,14 +394,23 @@ At the terminal, create a new directory called **myroot**, and run a instance of
 
 ***Questions:***
 
-1. Check the permission of the files created in myroot, what user and group is the files created in docker container on the host virtual machine? . ***(2 mark)*** __Fill answer here__.
+1. Check the permission of the files created in myroot, what user and group is the files created in docker container on the host virtual machine? . ***(2 mark)***
+```sh
+-rw-rw-rw-  1 root      root        12 Jan 17 07:33 myfile.txt
+```
 2. Can you change the permission of the files to user codespace.  You will need this to be able to commit and get points for this question. ***(2 mark)***
 ```bash
 //use sudo and chown
 sudo chown -R codespace:codespace myroot
-
 ```
-*** __Fill answer here__.***
+```sh
+@FarisArch ➜ /workspaces/OSProject_Faris/myroot (main) $ ls -la
+total 16
+drwxrwxrwx+ 2 codespace codespace 4096 Jan 17 07:33 .
+drwxrwxrwx+ 5 codespace root      4096 Jan 17 07:29 ..
+-rw-------  1 codespace codespace   85 Jan 17 07:33 .bash_history
+-rw-rw-rw-  1 codespace codespace   12 Jan 17 07:33 myfile.txt
+```
 
 ## You are on your own, create your own static webpage
 
